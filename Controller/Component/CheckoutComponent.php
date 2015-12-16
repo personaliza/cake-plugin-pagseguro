@@ -191,6 +191,20 @@ class CheckoutComponent extends PagSeguroComponent {
     }
 
     /**
+     * @throws Exception
+     * @throws PagSeguroServiceException
+     */
+    public function getSession()
+    {
+        try {
+            $credentials = PagSeguroConfig::getAccountCredentials();
+            return PagSeguroSessionService::getSession($this->credenciais);
+        } catch (PagSeguroServiceException $e) {
+            die($e->getMessage());
+        }
+    }
+
+    /**
      * E enfim enviando o usuário para o pagamento
      * 
      * @return boolean
