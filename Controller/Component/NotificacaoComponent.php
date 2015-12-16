@@ -36,7 +36,7 @@ class NotificacaoComponent extends PagSeguroComponent {
         // definindo alguns dados padrões
         $config = Configure::read('PagSeguro');
         if ( $config ) {
-            $this->credenciais = new PagSeguroAccountCredentials($config['credenciais']['email'], $config['credenciais']['token']);
+            $this->credenciais = new PagSeguroAccountCredentials($config['email'], $config['token']);
         }
         parent::startup($controller);
     }
