@@ -22,8 +22,8 @@ require_once ROOT . '/app/Plugin/PagSeguro/Assets/Codes.php';
 
 class NotificacaoComponent extends PagSeguroComponent {
     
-    private $credenciais = null;
-    private $dadosTransacao = null;
+    protected $credenciais = null;
+    protected $dadosTransacao = null;
     
     
  /**
